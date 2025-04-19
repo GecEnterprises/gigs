@@ -1,0 +1,59 @@
+setcps (115/60)
+
+d3 $ fast 4 $ n (scale "mixolydian" "<0 2 4 7>") 
+  # s "casio" 
+  # release 0.4 
+  # gain 0.8 
+  # binshift 0.1
+  # room 0.9 
+  # size 0.8 
+  # pan (perlin)
+
+d1 $ fast 1 $ s "hit:0"
+    # binshift 0.5
+    # shape 0.7
+    # gain 0.8
+    # room 0.2
+
+d2 $ fast 1 $ n (off 0.125 (|+ 7)  "<c*2 a(3,8) f(3,8,2) e*2>")
+  # s "haw:5"
+
+d4 $ sound "popkick:0*8"
+  # gain (rand + 0.2)
+  # binshift 0.1
+  # speed (choose [0.9, 1, 1.1])
+  # pan (rand - 0.5)
+
+d5 $ sound "bass2:0*8"
+  # gain (rand + 0.2)
+  # shape 0.5
+  # binshift 0.1
+  # speed (choose [0.9, 1, 1.1])
+  # pan (rand - 0.5)
+
+d6 $ sound "birds:0*8"
+  # gain (rand + 0.2)
+  # shape 0.9
+  # binshift 0.1
+  # gain 0.6
+  # speed (choose [0.2, 0.4, 0.6])
+  # pan (rand - 0.5)
+
+d7 $ sometimes(slow 8) $ sound "coins:0"
+  # room 0.2
+  # delay 1
+    
+
+d1 $ silence
+
+d2 $ silence
+
+d3 $ silence
+
+d5 $ silence
+
+d6 $ silence
+
+d4 $ silence
+
+d7 $ silence
